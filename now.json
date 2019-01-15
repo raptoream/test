@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "name": "vue",
+    "builds": [
+        { "src": "package.json", "use": "@now/static-build" },
+        {"src": "src/index.js","use":"@now/node-server"},
+        { "src": "src/public/js/bundle.js", "use": "@now/static" },
+        { "src": "src/public/index.html", "use": "@now/static" }
+    ],
+    "routes":
+    [
+        {"src": "/","dest":"src/public/index.html"},
+        {"src": "/api/tasks","dest":"src/index.js"}
+    ]
+}
